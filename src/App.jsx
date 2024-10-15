@@ -1,6 +1,6 @@
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
-import LoginPage from './pages/Login'
-import RegisterPage from './pages/Register'
+import LoginPage from './pages/login/Login'
+import RegisterPage from './pages/register/Register'
 import HomePage from './pages/Home'
 
 function App() {
