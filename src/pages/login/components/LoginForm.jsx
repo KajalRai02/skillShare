@@ -20,7 +20,7 @@ const LoginForm = ({ onSubmit, register, errors, isSubmitting }) => {
       >
         <FormControl>
           <TextField
-            id="outlined-required"
+            id="outlined-username"
             label="Username"
             {...register("Username", {
               required: "Username is required",
@@ -33,7 +33,7 @@ const LoginForm = ({ onSubmit, register, errors, isSubmitting }) => {
         <FormControl>
           <TextField
             type="password"
-            id="outlined-required"
+            id="outlined-password"
             label="Password"
             {...register("Password", {
               required: "Password is required",
