@@ -7,7 +7,7 @@ import { createTheme, ThemeProvider } from "@mui/material/styles";
 
 import { useState } from "react";
 
-import Header from "./Header";
+import Header from "../Header";
 
 import DUMMY_COURSE from "./CourseList";
 

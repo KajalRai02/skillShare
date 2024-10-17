@@ -4,12 +4,12 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import LoginPage from './pages/login/Login'
 import RegisterPage from './pages/register/Register'
 import HomePage from './pages/Home'
-import CourseView from './pages/CourseView'
+import CourseView from './pages/courseDashboard/CourseView'
 
-import SuperAdminDashboard from './pages/SuperAdminDashboard'
-import AdminDashboard from './pages/AdminDashboard'
-import StudentDashboard from './pages/StudentDashboard'
-import CoursesDashboard from './pages/CoursesDashboard'
+import SuperAdminDashboard from './pages/dashboards/SuperAdminDashboard'
+import AdminDashboard from './pages/dashboards/AdminDashboard'
+import StudentDashboard from './pages/studentDashboard.jsx/StudentDashboard'
+
 
 
 function App() {
@@ -28,7 +28,7 @@ function App() {
             {path: 'student', element: <StudentDashboard/> }
           ]
         },
-        {path:'courses', element: <CoursesDashboard />},  
+        
         {path:'courseView/:courseId', element: <CourseView />}
           
         
