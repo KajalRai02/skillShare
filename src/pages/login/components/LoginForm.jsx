@@ -1,19 +1,9 @@
 /* eslint-disable react/prop-types */
 
-import { useState } from "react";
-
-import { Box, TextField, Button,IconButton, FormControl, FormHelperText, Typography, Paper, InputAdornment } from "@mui/material";
-import VisibilityIcon from '@mui/icons-material/Visibility';
-import VisibilityOffIcon from '@mui/icons-material/VisibilityOff';
+import { Box, TextField, Button, FormControl, FormHelperText, Typography, Paper } from "@mui/material";
 
 const LoginForm = ({ onSubmit, register, errors, isSubmitting }) => {
-  const [showPassword, setShowPassword] = useState(false);
-
-  const togglePasswordVisibility = () => {
-    setShowPassword(!showPassword);
-  };
-
-  return (  
+  return (
     <Paper elevation={24} sx={{ padding: 4, width: '80%', mt: "100px", maxWidth: 400, backgroundColor: "#8697C4" }}>
       <Typography variant="h4" align="center" sx={{ marginBottom: 2 }}>Login</Typography>
 
@@ -42,31 +32,15 @@ const LoginForm = ({ onSubmit, register, errors, isSubmitting }) => {
 
         <FormControl>
           <TextField
-            type={showPassword ? 'text' : 'password'}
+            type="password"
             id="outlined-password"
             label="Password"
             {...register("Password", {
               required: "Password is required",
-              
-              // minLength: { value: 8, message: "Password must be at least 8 characters" },
-              // maxLength: { value: 20, message: "Password cannot exceed 20 characters" },
+              minLength: { value: 8, message: "Password must be at least 8 characters" },
+              maxLength: { value: 20, message: "Password cannot exceed 20 characters" },
             })}
-            slotProps={{
-              input:{
-                endAdornment:(
-                  <InputAdornment position="end">
-                    <IconButton onClick={togglePasswordVisibility} edge="end">
-                      {showPassword ? <VisibilityIcon /> : <VisibilityOffIcon />}
-                    </IconButton>
-                  </InputAdornment>
-                )
-
-              }
-            }}
-
-            
           />
-          
           <FormHelperText>{errors.Password?.message}</FormHelperText>
         </FormControl>
 
