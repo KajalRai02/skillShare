@@ -18,7 +18,15 @@ function LoginPage() {
         userName:data.Username,
         password:data.Password
       })
-      console.log("Login Sucessful", response.data)
+      const token = response.headers['authorization'];
+
+      if (token) {
+        localStorage.setItem('accessToken', token);
+        console.log("Token stored successfully:", token);
+      } else {
+        console.error("No token found in headers");
+      }
+
       reset();
 
     }
