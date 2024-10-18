@@ -1,3 +1,4 @@
+
 export const DUMMY_COURSES = [
     {
       title: "JAVA",
@@ -35,4 +36,3 @@ export const DUMMY_COURSES = [
       status: true
     },
   ];
-  

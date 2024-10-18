@@ -1,3 +1,4 @@
+
 export const DUMMY_USERS = [
     {
       username: "shanti",
@@ -28,4 +29,3 @@ export const DUMMY_USERS = [
       status: true,
     },
   ];
-  
