@@ -12,28 +12,32 @@ function LoginPage() {
     formState: { errors, isSubmitting }
   } = useForm();
 
+  
+
   const onSubmit = async (data) => {
     try{
       const response= await axios.post("http://localhost:8080/api/auth/login",{
         userName:data.Username,
         password:data.Password
       })
-      const token = response.headers['authorization'];
+
+      const token = response.headers['authorization'] || response.headers['Authorization'];
 
       if (token) {
+        // Optionally store the token in localStorage or sessionStorage for future requests
         localStorage.setItem('accessToken', token);
-        console.log("Token stored successfully:", token);
+
+        console.log("Login Successful, token stored");
       } else {
         console.error("No token found in headers");
       }
-
-      reset();
 
     }
     catch(error){
       console.log(error)
 
     }
+    reset();
   };
 
   return (
